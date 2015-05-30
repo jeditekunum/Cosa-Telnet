@@ -16,7 +16,7 @@ File>Sketchbook menu. Open the CosaTelnetServer example sketch. Select
 the Cosa core by selecting one of the Cosa boards in the Tools>Board
 menu.
 
-See also Cosa-Shell for additional example sketch.
+See also [Cosa-Shell](https://github.com/mikaelpatel/Cosa-Shell/tree/master/examples/CosaShellTelnetServer) for additional example sketch.
 
 
 
