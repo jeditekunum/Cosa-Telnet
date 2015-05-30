@@ -1,7 +1,7 @@
 # Cosa-Telnet
 
 This Cosa library is an implementation of the Telnet Protocol. It
-allow Arduino to act as an Telnet Server.
+allow Arduino to act as a Telnet Server.
 
 # Install
 
