@@ -45,7 +45,7 @@ public:
     Server(IOStream& ios) : INET::Server(ios) {}
 
     /**
-     * @override INET::Server
+     * @override{INET::Server}
      * Start server with given socket. Initiates socket for incoming
      * connection-oriented requests (TCP/listen). Set io-stream device
      * (socket) in no echo mode. Returns true if successful otherwise
@@ -57,7 +57,7 @@ public:
 
   protected:
     /**
-     * @override INET::Server
+     * @override{INET::Server}
      * Application extension; Called when a client connect has been
      * accepted. Handle flush of telnet terminal setting on connect.
      * Return true if accepted otherwise false.
