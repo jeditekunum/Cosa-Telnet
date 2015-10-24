@@ -27,7 +27,7 @@ Telnet::Server::begin(Socket* sock)
   if (sock == NULL) return (false);
 
   // Set telnet end of line mode (crlf)
-  sock->set_eol(IOStream::CRLF_MODE);
+  sock->eol(IOStream::CRLF_MODE);
 
   // Complete the setup
   return (INET::Server::begin(sock));
@@ -39,7 +39,7 @@ Telnet::Server::on_accept(IOStream& ios)
   UNUSED(ios);
 
   // Sanity check server state
-  Socket* sock = get_socket();
+  Socket* sock = socket();
   if (sock == NULL) return (false);
 
   // Skip first line from client; terminal settings not implemented
