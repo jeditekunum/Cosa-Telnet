@@ -42,7 +42,9 @@
 #include <DHCP.h>
 #include <DNS.h>
 #include <Telnet.h>
+#include <W5X00.h>
 #include <W5100.h>
+// #include <W5200.h>
 
 #include "Cosa/Memory.h"
 #include "Cosa/InputPin.hh"
@@ -62,9 +64,13 @@ OutputPin sd(Board::D4, 1);
 #define SUBNET 255,255,255,0
 #define GATEWAY 192,168,1,1
 
-// W5100 Ethernet Controller with MAC-address
+// W5100 Ethernet Controller
 static const uint8_t mac[6] __PROGMEM = { 0xde, 0xad, 0xbe, 0xef, 0xfe, 0xed };
 W5100 ethernet(mac);
+
+// W5200 Ethernet Controller
+// W5200 ethernet(mac);
+
 Socket* sock = NULL;
 
 void setup()
