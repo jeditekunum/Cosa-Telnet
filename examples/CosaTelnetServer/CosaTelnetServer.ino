@@ -3,7 +3,7 @@
  * @version 1.0
  *
  * @section License
- * Copyright (C) 2014-2015, Mikael Patel
+ * Copyright (C) 2014-2017, Mikael Patel
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -45,6 +45,7 @@
 #include <W5X00.h>
 #include <W5100.h>
 // #include <W5200.h>
+// #include <W5500.h>
 
 #include "Cosa/Memory.h"
 #include "Cosa/InputPin.hh"
@@ -64,12 +65,22 @@ OutputPin sd(Board::D4, 1);
 #define SUBNET 255,255,255,0
 #define GATEWAY 192,168,1,1
 
-// W5100 Ethernet Controller
 static const uint8_t mac[6] __PROGMEM = { 0xde, 0xad, 0xbe, 0xef, 0xfe, 0xed };
+
+// W5100 Ethernet Controller
+#ifdef COSA_W5100_H
 W5100 ethernet(mac);
+#endif
 
 // W5200 Ethernet Controller
-// W5200 ethernet(mac);
+#ifdef COSA_W5200_H
+W5200 ethernet(mac);
+#endif
+
+// W5500 Ethernet Controller
+#ifdef COSA_W5500_H
+W5500 ethernet(mac);
+#endif
 
 Socket* sock = NULL;
 
